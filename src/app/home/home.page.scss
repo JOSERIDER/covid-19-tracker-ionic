@@ -1,0 +1,9 @@
+ion-content ion-toolbar {
+    --background: var(--ion-background-color);
+}
+
+ion-item .date {
+    float: right;
+    align-items: center;
+    display: flex;
+}

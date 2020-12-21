@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{(country$ | async)?.country}}</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-img [src]="image"></ion-img>
+        <ion-card-header>
+            <ion-card-subtitle>Information of {{(country$ | async)?.country}}:</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-label>
+                    Total cases:
+                    <p class="label">{{(country$ | async)?.cases}}</p>
+                </ion-label>
+
+            </ion-item>
+
+            <ion-item>
+                <ion-label>
+                    Total Deaths:
+                    <p class="label">{{(country$ | async)?.deaths}}</p>
+                </ion-label>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>
+                    Today cases:
+                    <p class="label">{{(country$ | async)?.todayCases}}</p>
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Today Deaths:
+                    <p class="label">{{(country$ | async)?.todayDeaths}}</p>
+                </ion-label>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>
+                    Recovered:
+                    <p class="label">{{(country$ | async)?.recovered}}</p>
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Critical:
+                    <p class="label">{{(country$ | async)?.critical}}</p>
+                </ion-label>
+            </ion-item>
+
+
+        </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Covid-19
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">
+                Covid-19
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-list>
+        <ion-item *ngFor="let country of countries | async" (click)="viewCountry(country)">
+            <ion-label>
+                {{country.country}}
+                <span class="date" slot="end">
+                <ion-note>{{ country.cases }}</ion-note>
+                <ion-icon name="chevron-forward" size="small" ></ion-icon>
+              </span>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
